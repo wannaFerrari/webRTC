@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./public/css/style.css")
+        script(src="https://kit.fontawesome.com/9995ccc73c.js" crossorigin="anonymous")
+        title Conference
+    body 
+        header
+            i(class="fa-solid fa-satellite-dish fa-2x")
+            h1#headTitle Conference
+            Button#returnSomething(type="button", style="display: none") COPY
+            input#copyCode(type="text", style="display: none")
+        main
+            div#welcome 
+                
+                    div#initialUI
+                        form
+                            Button#create(type="button") Create Room
+                            Button#join(type="button") Join Room
+                    div#createUI
+                        form#createForm
+                            p#codeGuide Private room code is: 
+                            input#roomCode(type="text", required, placeholder="Room Code")
+                            input#nicknameC(type="text", required, placeholder="Nickname")
+                            button#createRoomBtn(type="button") Create Room
+                            button#createBack(type="button") Back
+                    div#joinUI
+                        form#joinForm
+                            input#roomName(type="text", required, placeholder="Room Code")
+                            input#nickname(type="text", required, placeholder="Nickname")
+                            button#joinRoomBtn(type="button") Join Room
+                            button#joinBack(type="button") Back
+
+            div#call(class="call")
+                div#streamBox
+                    div#streams
+                        div#myStream(class="people1")
+                            video#myFace(autoplay, playsinline, width="400", height="400")
+                             
+                    div#controlers
+                        div#controlers__column
+                            button#leave
+                                i(class="fa-solid fa-person-walking-arrow-right fa-2x")
+                div#chatRoom
+                    ul#chatBox
+                    form#chatForm
+                        input(required, type="text", placeholder="Write your chat")
+                        button
+                            i(class="fa-solid fa-paper-plane fa-2x")
+        aside.modal.hidden
+            div.modal__box
+                i.warningIcon(class="fa-solid fa-triangle-exclamation fa-4x")
+                h2.modal__text
+                button.modal__btn OK
+
+
+
+        
+        script(src="/socket.io/socket.io.js")
+        script(src="/public/js/app.js")
+        
