@@ -150,6 +150,8 @@ function leaveRoom() {
     nickname = "";
     myStream.getTracks().forEach((track) => track.stop());
     myFace.srcObject = null;
+    returnSomething.style.display="none";
+    headTitle.innerText = "Conference";
     clearAllVideos();
     clearAllChat();
 }

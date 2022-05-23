@@ -5,7 +5,6 @@ const returnSomething = document.querySelector("#returnSomething");
 returnSomething.addEventListener("click", handleCopyCode);
 
 const myFace = document.querySelector("#myFace");
-const muteBtn = document.querySelector("#mute");
 const headTitle = document.getElementById("headTitle");
 const call = document.querySelector("#call");
 const welcome = document.querySelector("#welcome");
@@ -234,8 +233,11 @@ function leaveRoom() {
     nickname = "";
     myStream.getTracks().forEach((track) => track.stop());
     myFace.srcObject = null;
+    returnSomething.style.display="none";
+    headTitle.innerText = "Conference";
     clearAllVideos();
     clearAllChat();
+    location.href ="/";
 }
 
 function removeVideo(leavedSocketId) {

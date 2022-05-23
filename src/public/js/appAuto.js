@@ -132,14 +132,16 @@ const leaveBtn = document.querySelector("#leave");
 function leaveRoom() {
     socket.disconnect();
     call.classList.add(HIDDEN_CN);
-    welcome.hidden = false;
     peerConnectionObjArr = [];
     peopleInRoom = 1;
     nickname = "";
     myStream.getTracks().forEach((track) => track.stop());
     myFace.srcObject = null;
+    returnSomething.style.display="none";
+    headTitle.innerText = "Conference";
     clearAllVideos();
     clearAllChat();
+    location.href ="/";
 }
 
 function removeVideo(leavedSocketId) {
