@@ -45,4 +45,5 @@
 
 
 [![Video Label](http://img.youtube.com/vi/Jf6XRQ-HDEQ/0.jpg)](https://youtu.be/Jf6XRQ-HDEQ)
+이미지를 클릭하면 해당 영상으로 이동합니다
 
